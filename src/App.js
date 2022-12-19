@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import './Stylesheets/App.css'
 
 import Drawbar from './Drawbar'
@@ -101,7 +101,7 @@ export default function App() {
             gainArr[i].gain.value = initalGains[i]
         }
         */
-        console.log("audio Context and gainNodes created")
+        // console.log("audio Context and gainNodes created")
     }
 
     useEffect(() => {
@@ -207,7 +207,7 @@ export default function App() {
                 }
             }
         }
-        console.log(oscillators)
+        // console.log(oscillators)
     }
 
     function baseNoteToPoly(baseNote) {
@@ -251,7 +251,7 @@ export default function App() {
         }
 
         delete oscillators[note.toString()]
-        console.log(oscillators)
+        // console.log(oscillators)
     }
     
     function updateDevices(event) {
@@ -262,7 +262,7 @@ export default function App() {
     }
     
     function failure() {
-        console.log("could not connect MIDI")
+        // console.log("could not connect MIDI")
     }
 
     function changeGain(gain) {
@@ -334,10 +334,6 @@ export default function App() {
         setToggleVibCho(true)
         toggleVibChoRef.current = true
     }
-
-    useEffect(() => {
-        console.log(vibSetting)
-    }, [vibSetting])
 
     return (
         <div>

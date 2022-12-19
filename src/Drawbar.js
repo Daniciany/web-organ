@@ -10,7 +10,8 @@ export default function Drawbar(props) {
   const trackPos = (data) => {
     setPosition({ x: data.x, y: data.y })
     value = ((position.y + 200) / 25).toFixed(0)
-    if (value != (props.value01 / 0.125)) {
+    
+    if (value !== (props.value01 / 0.125)) {
       props.changeFunction(value * 0.125)
     }
   }
