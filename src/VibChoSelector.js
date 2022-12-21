@@ -19,8 +19,8 @@ export default function VibChoSelector({onChange, value}) {
         }
         <MyKnobSkin
             diameter={100}
-            min={0}
-            max={5}
+            min={1}
+            max={6}
             step={1}
             value={value}
             onValueChange={onChange}
