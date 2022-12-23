@@ -1,0 +1,75 @@
+@keyframes rotateToUp {
+    0% {transform: rotateX(25deg);}
+    50% {transform: rotateX(-20deg);}
+    100% {transform: rotateX(-25deg);}
+}
+
+@keyframes rotateToDown {
+    0% {transform: rotateX(-25deg);}
+    50% {transform: rotateX(20deg);}
+    100% {transform: rotateX(25deg);}
+}
+
+.PercussionContainer h4 {
+    margin: 5px;
+}
+
+.PercussionButtonDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    height: 60%;
+    border-radius: 5px;
+    padding: 0;
+    background: linear-gradient(#a5a5a5, #e5e5e5);
+}
+
+.PercussionButtonUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    height: 60%;
+    border-radius: 5px;
+    padding: 0;
+    background: linear-gradient(#e5e5e5, #a5a5a5);
+}
+
+.innerContainerDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 95%;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    transform: rotateX(25deg);
+    animation-name: rotateToUp;
+    animation-duration: 500ms;
+}
+
+.innerContainerUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 95%;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    transform: rotateX(-25deg);
+    animation-name: rotateToDown;
+    animation-duration: 500ms;
+}
+
+.ShadowActive {
+    height: 10px;
+    width: 100%;
+}
+
+.text {
+    margin-left: 5px;
+    margin-right: 5px;
+}

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './Stylesheets/App.css'
 
 import Drawbar from './Drawbar'
 import VibChoSelector from './VibChoSelector'
+import Percussion from './Percussion'
 import About from './About'
 
 const brown = {light: '#440e0e', dark: '#300b0b'}
@@ -15,15 +16,7 @@ let gainArr = []
 
 // todo:
 /*
-    for vibrato and Chorus
-    vibrato: vibrato Osc's so laut wie andere Osc's, je nach Abweichung langsam, oder schnell
-    chorus: vibrato Osc's halb so laut wie andere Osc's, je nach Abweichung langsam, oder schnell
-    V1: speed: 5.78Hz, mix: 100% Vol
-    C1: speed: 5.78Hz, mix: 50% Vol
-    V2: speed: 6.84Hz, mix: 100% Vol
-    C2: speed: 6.84Hz, mix: 50% Vol
-    V3: speed: 7.90Hz, mix: 100% Vol
-    C3: speed: 7.90Hz, mix: 50% Vol
+    percussion
 */
 
 export default function App() {
@@ -32,7 +25,7 @@ export default function App() {
 
     const [toggleVibCho, setToggleVibCho] = useState(false)
     const toggleVibChoRef = useRef(toggleVibCho)
-    const [vibSetting, setVibSetting] = useState(1)
+    const [vibSetting, setVibSetting] = useState(3)
     const vibSettingRef = useRef(vibSetting)
 
     const [gain, setGain] = useState(0.1)
@@ -154,26 +147,31 @@ export default function App() {
                 let gainNodeVol = 0.1
                 let lowGainNodeVol = 0.03
                 switch (vibSettingRef.current) {
-                    // case 1: V1
-                    // case 2: C1
-                    // case 3: V2
-                    // case 4: C2
-                    // case 5: V3
-                    // case 6: C3
-                    case 2:
-                        gainNodeVol = lowGainNodeVol
-                        break
-                    case 3: 
-                        newFreq = 6.84
-                        break
+                    // case 1: V3
+                    // case 2: C3
+                    // case 3: V1
+                    // case 4: C1
+                    // case 5: V2
+                    // case 6: C2
                     case 4:
-                        newFreq = 6.84
+                        // C1
                         gainNodeVol = lowGainNodeVol
                         break
-                    case 5:
-                        newFreq = 7.90
+                    case 5: 
+                        // V2 
+                        newFreq = 6.84
                         break
                     case 6:
+                        // C2
+                        newFreq = 6.84
+                        gainNodeVol = lowGainNodeVol
+                        break
+                    case 1:
+                        // V3
+                        newFreq = 7.90
+                        break
+                    case 2:
+                        // C3
                         gainNodeVol = lowGainNodeVol
                         newFreq = 7.90
                         break
@@ -363,6 +361,9 @@ export default function App() {
                     <Drawbar name="1 1/1'" value01={gain113Vol} changeFunction={changeGain113} light={black.light} dark={black.dark} />
                     <Drawbar name="1'" value01={gain1Vol} changeFunction={changeGain1} light={white.light} dark={white.dark} />
                 </div>
+
+                <Percussion />
+
                 <div className='MasterGain'>
                     <p>Master Gain</p>
                     <p>{gain}</p>

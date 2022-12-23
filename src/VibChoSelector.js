@@ -3,7 +3,7 @@ import './Stylesheets/VibChoSelector.css'
 import MyKnobSkin from './MyKnobSkin'
 
 export default function VibChoSelector({onChange, value}) {
-  const settingArr = ["V-1", "C-1", "V-2", "C-2", "V-3", "C-3"]
+  const settingArr = ["C-2", "V-3", "C-3", "V-1", "C-1", "V-2"]
 
   return (
     <div className='Container'>
