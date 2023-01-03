@@ -14,6 +14,11 @@
     margin: 5px;
 }
 
+.PercussionContainer {
+    display: flex;
+    align-items: center;
+}
+
 .PercussionButtonDown {
     display: flex;
     flex-direction: column;
@@ -21,9 +26,10 @@
     align-items: center;
     border: none;
     height: 60%;
+    width: 75px;
     border-radius: 5px;
     padding: 0;
-    background: linear-gradient(#a5a5a5, #e5e5e5);
+    background: linear-gradient(#c5c5c5, #e5e5e5);
 }
 
 .PercussionButtonUp {
@@ -33,9 +39,10 @@
     align-items: center;
     border: none;
     height: 60%;
+    width: 75px;
     border-radius: 5px;
     padding: 0;
-    background: linear-gradient(#e5e5e5, #a5a5a5);
+    background: linear-gradient(#e5e5e5, #c5c5c5);
 }
 
 .innerContainerDown {
@@ -48,7 +55,7 @@
     border-radius: 5px;
     transform: rotateX(25deg);
     animation-name: rotateToUp;
-    animation-duration: 500ms;
+    animation-duration: 750ms;
 }
 
 .innerContainerUp {
@@ -61,7 +68,7 @@
     border-radius: 5px;
     transform: rotateX(-25deg);
     animation-name: rotateToDown;
-    animation-duration: 500ms;
+    animation-duration: 750ms;
 }
 
 .ShadowActive {
@@ -70,6 +77,9 @@
 }
 
 .text {
-    margin-left: 5px;
-    margin-right: 5px;
+    font-size: 12px;
+}
+
+.Gap {
+    min-width: 10px;  
 }

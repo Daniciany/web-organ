@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './Stylesheets/App.css'
+import { Link } from 'react-router-dom'
 
 import Drawbar from './Drawbar'
 import VibChoSelector from './VibChoSelector'
 import Percussion from './Percussion'
+import DonateButton from './DonateButton'
 import About from './About'
 
 const brown = {light: '#440e0e', dark: '#300b0b'}
@@ -52,6 +54,8 @@ export default function App() {
 
     const [devices, setDevices] = useState([])
     let oscillators = []
+
+    const screenWidth = window.innerWidth;
 
     function start() {
         if (!turnedOn) {
@@ -231,6 +235,7 @@ export default function App() {
         osc.connect(oscGain)
         oscGain.connect(gainNode)
         osc.type = "sine"
+
         osc.start()
         oscillators[baseNote].push(osc)
     }
@@ -333,8 +338,16 @@ export default function App() {
         toggleVibChoRef.current = true
     }
 
+    if (screenWidth < 1100) {
+        return (
+            <div>
+                <p>please open web organ on a desktop pc or laptop</p>
+            </div>
+        )
+    }
+
     return (
-        <div>
+        <div className='Container'>
             <header className='Panel'>
                 <div className='General'>
                     <p className='Title'>WebOrgan 2.0</p>
@@ -381,8 +394,10 @@ export default function App() {
                 <p style={{fontWeight: '700', marginTop: '2.5%'}}>Keep in mind:</p>
                 <p>if mono is selected on your midi device, then the organ will be mono as well</p>
                 
-                <About />
+                <DonateButton />
             </main>
+            
+            <Link className='AboutLink' to="/about">About</Link>
         </div>
     )
 }

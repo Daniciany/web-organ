@@ -29,7 +29,7 @@ p {
 
 .Panel {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   gap: 2rem;
   background-color: #202020;
   padding: 0 10px 2rem 10px;
@@ -105,3 +105,22 @@ p {
   background: #303030; 
   border-radius: 2px;
 }
+
+.Container {
+
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  height: auto ;
+}
+
+.AboutLink {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1rem;
+  color: #fff;
+  align-self: flex-end;
+}
+
