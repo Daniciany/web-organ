@@ -394,7 +394,7 @@ export default function App() {
                 <p style={{fontWeight: '700', marginTop: '2.5%'}}>Keep in mind:</p>
                 <p>if mono is selected on your midi device, then the organ will be mono as well</p>
                 
-                <DonateButton />
+                {/* <DonateButton /> */}
             </main>
             
             <Link className='AboutLink' to="/about">About</Link>
